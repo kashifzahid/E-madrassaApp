@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TeachersConsole.TeacherAssignment">
+
+    <include
+        layout="@layout/topbar"
+        android:id="@+id/teacher_assignment_toolbar">
+    </include>
+
+    <LinearLayout
+        android:id="@+id/top_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="40dp"
+        android:weightSum="4"
+        android:layout_below="@id/teacher_attendence_toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search:"
+            android:textColor="#01579B"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="5dp"/>
+
+        <RelativeLayout
+            android:layout_marginLeft="5dp"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/spin_design">
+
+            <Spinner
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+            </Spinner>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10/1/2015"
+            android:textColor="#01579B"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/std_profile_image"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@drawable/profileicon"
+                app:civ_border_width="2dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                app:civ_border_color="#FF000000"/>
+
+            <TextView
+                android:id="@+id/student_name"
+                android:textColor="@color/student_name_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Ahmed"
+                android:layout_marginLeft="105dp"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/student_roll_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="105dp"
+                android:text="Roll No.165"
+                android:textSize="17sp"
+                android:layout_below="@id/student_name" />
+
+            <TextView
+                android:id="@+id/student_semester"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Semester"
+                android:textSize="15sp"
+                android:layout_below="@id/student_roll_number"
+                android:layout_marginLeft="105dp"/>
+
+            <TextView
+                android:id="@+id/student_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class: A"
+                android:textSize="15sp"
+                android:layout_marginLeft="105dp"
+                android:layout_below="@id/student_semester"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Present"
+                android:textSize="20sp"
+                android:textColor="#1B5E20"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="35sp"
+                android:layout_marginRight="15dp"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Assignment"
+            android:textStyle="bold"
+            android:textColor="#01579B"
+            android:layout_marginLeft="100dp"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Assignment"
+            android:textColor="#01579B"
+            android:textSize="20sp" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizone_1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:measureAllChildren="false"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="100dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/spin_design">
+
+                        <Spinner
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"></Spinner>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="90dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/spin_design">
+
+                        <Spinner
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"></Spinner>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="12dp"
+                        android:text="TO"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18sp" />
+
+                    <RelativeLayout
+                        android:layout_width="90dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="2dp"
+                        android:background="@drawable/spin_design">
+
+                        <Spinner
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"></Spinner>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Others:"
+            android:layout_marginTop="20dp"
+            android:textColor="#01579B"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/remarks_designs"
+            android:paddingLeft="25dp">
+
+            <EditText
+                android:id="@+id/remarks_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Teacher remarks"
+                android:background="@null"></EditText>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Grade:"
+                android:textSize="20sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="100dp"
+                />
+
+            <RelativeLayout
+                android:layout_marginLeft="17dp"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/spin_design">
+
+                <Spinner
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent">
+                </Spinner>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/teacherdailydiary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/teacherdashboard_diarybutton"
+            android:text="Submit"
+            android:textColor="@color/Textcolor" />
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout>

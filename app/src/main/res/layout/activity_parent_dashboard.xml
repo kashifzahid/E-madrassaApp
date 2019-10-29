@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ParentConsole.ParentDashboard">
+
+    <include
+        layout="@layout/topbar"
+        android:id="@+id/parent_dashboard_toolbar">
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:id="@+id/linear_top"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="110dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/teacherdashboard_present">
+
+            <TextView
+                android:id="@+id/no_of_present_students"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="120"
+                android:textColor="@color/Textcolor"
+                android:textSize="50sp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_below="@id/no_of_present_students"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/present_string"
+                android:textColor="@color/Textcolor"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="110dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/teacherdashboard_absent">
+
+            <TextView
+                android:id="@+id/no_of_absent_students"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60"
+                android:textColor="@color/Textcolor"
+                android:textSize="50sp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_below="@id/no_of_absent_students"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/absent_string"
+                android:textColor="@color/Textcolor"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+
+                android:textStyle="bold"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Daily Diary"
+        android:onClick="opendailydiary"
+        android:textColor="@color/Textcolor"
+        android:id="@+id/parentdailydiary"
+        android:background="@drawable/teacherdashboard_diarybutton"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/relative_attendence">
+
+            <LinearLayout
+                android:id="@+id/attendence_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/attendence_box"
+                android:layout_marginTop="25dp"
+                android:onClick="openparentattendence"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/assigmenticon"
+                    android:layout_margin="25dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attendence"
+                android:textSize="16sp"
+                android:layout_below="@id/attendence_layout"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:id="@+id/relative_class"
+
+            >
+
+            <LinearLayout
+                android:id="@+id/class_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/class_box"
+                android:layout_marginTop="25dp"
+                android:onClick="openPerformnce"
+                android:layout_centerHorizontal="true"
+                >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/classicon"
+                    android:layout_margin="25dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Performnce"
+                android:textSize="16sp"
+                android:layout_below="@id/class_layout"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:id="@+id/assignment_exams">
+
+            <LinearLayout
+                android:id="@+id/assignment_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/assignment_box"
+                android:layout_marginTop="25dp"
+                android:onClick="openresult"
+                android:layout_centerHorizontal="true"
+                >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/assigmenticon"
+                    android:layout_margin="25dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Result"
+                android:textSize="16sp"
+                android:layout_below="@id/assignment_layout"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/relative_fee">
+
+            <LinearLayout
+                android:id="@+id/fee_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/exam_box"
+                android:layout_marginTop="25dp"
+                android:onClick="openfee"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/feeicon"
+                    android:layout_margin="25dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fee"
+                android:textSize="16sp"
+                android:layout_below="@id/fee_layout"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"
+            android:id="@+id/relative_event">
+
+            <LinearLayout
+                android:id="@+id/event_layout"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/schedule_box"
+                android:layout_marginTop="25dp"
+                android:onClick="openevents"
+                android:layout_centerHorizontal="true"
+                >
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/eventicon"
+                    android:layout_margin="25dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Events"
+                android:textSize="16sp"
+                android:layout_below="@id/event_layout"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

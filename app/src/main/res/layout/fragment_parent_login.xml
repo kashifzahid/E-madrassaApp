@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    tools:context=".LoginFragments.ParentLogin">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  Sign In"
+        android:textColor="@color/LoginTextview"
+        android:textSize="30sp"
+        android:paddingLeft="150dp"
+        android:layout_marginTop="50dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Name"
+        android:shadowColor="@color/colorPrimary"
+        android:textColor="@color/LoginTextview"
+        android:textColorHint="@color/LoginTextview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="50dp"
+        android:cursorVisible="true"
+        android:backgroundTint="@color/LoginTextview"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColor="@color/LoginTextview"
+        android:textColorHint="@color/LoginTextview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="30dp"
+        android:cursorVisible="true"
+        android:backgroundTint="@color/LoginTextview"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="Sign In"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/teachersignin"
+        android:background="@drawable/loginbuttondesign"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <include layout="@layout/image_sign_in"
+
+        />
+</LinearLayout>

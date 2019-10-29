@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ParentConsole.ParentDailyDiary">
+
+    <include
+        layout="@layout/topbar"
+        android:id="@+id/parent_dailydiary_toolbar">
+    </include>
+    <LinearLayout
+        android:id="@+id/top_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="40dp"
+        android:weightSum="4"
+        android:layout_below="@id/teacher_attendence_toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Date:"
+            android:textColor="#01579B"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="5dp"/>
+
+        <RelativeLayout
+            android:layout_marginLeft="5dp"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/spin_design">
+
+            <Spinner
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+            </Spinner>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/std_profile_image"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@drawable/profileicon"
+                app:civ_border_width="2dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                app:civ_border_color="#FF000000"/>
+
+            <TextView
+                android:textColor="@color/student_name_color"
+                android:id="@+id/student_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Ahmed"
+                android:layout_marginLeft="105dp"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/student_roll_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="105dp"
+                android:text="Roll No.165"
+                android:textSize="17sp"
+                android:layout_below="@id/student_name" />
+
+            <TextView
+                android:id="@+id/student_semester"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Semester"
+                android:textSize="15sp"
+                android:layout_below="@id/student_roll_number"
+                android:layout_marginLeft="105dp"/>
+
+            <TextView
+                android:id="@+id/student_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class: A"
+                android:textSize="15sp"
+                android:layout_marginLeft="105dp"
+                android:layout_below="@id/student_semester"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Details"
+                android:textSize="20sp"
+                android:textColor="#1B5E20"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="35sp"
+                android:layout_marginRight="25dp"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:measureAllChildren="false"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Academics"
+                        android:textColor="#01579B"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="155dp"
+                        android:textSize="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sabaq:"
+                        android:textColor="#01579B"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        />
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizone_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:measureAllChildren="false"
+                        android:scrollbars="none" >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp">
+
+                            <TextView
+                                android:id="@+id/sabaqpara_parent"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:padding="5dp"
+                                android:paddingLeft="20dp"
+                                android:text="Para"></TextView>
+
+                            <TextView
+                                android:id="@+id/sabaq_startverse_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Verse"
+                                android:padding="5dp"
+                                android:layout_marginLeft="0dp"
+                                android:background="@drawable/dailydiarydesign_parent">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:text="TO"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/sabaq_endverse_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Verse"
+                                android:padding="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/sabaq_grade_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Grade"
+                                android:padding="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sabaqi:"
+                        android:textColor="#01579B"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        />
+                    <HorizontalScrollView
+                        android:id="@+id/horizone_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:measureAllChildren="false"
+                        android:scrollbars="none" >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp">
+
+                            <TextView
+                                android:id="@+id/sabaqipara_parent"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Para"
+                                android:padding="5dp"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/sabaqi_startverse_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Verse"
+                                android:padding="5dp"
+                                android:layout_marginLeft="0dp"
+                                android:background="@drawable/dailydiarydesign_parent">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:text="TO"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/sabaqi_endverse_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Verse"
+                                android:padding="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/sabaqi_grade_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Grade"
+                                android:padding="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manzil:"
+                        android:textColor="#01579B"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20sp"
+                        />
+                    <HorizontalScrollView
+                        android:id="@+id/horizone_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:measureAllChildren="false"
+                        android:scrollbars="none" >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="4dp">
+
+                            <TextView
+                                android:id="@+id/manzilpara_parent"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:text="Para"
+                                android:padding="5dp"
+                                android:layout_marginLeft="35dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/manzil_startverse_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Verse"
+                                android:padding="5dp"
+                                android:layout_marginLeft="0dp"
+                                android:background="@drawable/dailydiarydesign_parent">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="50dp"
+                                android:text="TO"
+                                android:layout_marginLeft="10dp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/manzil_endverse_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Verse"
+                                android:padding="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                            <TextView
+                                android:id="@+id/manzil_grade_parent"
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:text="Grade"
+                                android:padding="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/dailydiarydesign_parent"
+                                android:paddingLeft="20dp"></TextView>
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Overall Grade:"
+                            android:textSize="20sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="100dp"
+                            />
+                        <TextView
+                            android:id="@+id/acadmics_overall_grade_parent"
+                            android:layout_width="70dp"
+                            android:layout_height="30dp"
+                            android:text="Grade"
+                            android:padding="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/dailydiarydesign_parent">
+
+                        </TextView>
+
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_height="0.2dp"
+                        android:background="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Today's Performance"
+                            android:layout_marginTop="20dp"
+                            android:textColor="#01579B"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="120dp"
+                            android:textSize="20dp"/>
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizone_5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:fillViewport="true"
+                            android:measureAllChildren="false"
+                            android:scrollbars="none" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="19dp"
+                                    android:text="Overall Grade:"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/acadmics_parent"
+                                    android:layout_width="70dp"
+                                    android:layout_height="30dp"
+                                    android:text="Grade"
+                                    android:padding="5dp"
+                                    android:layout_marginLeft="110dp"
+                                    android:layout_marginTop="15dp"
+                                    android:background="@drawable/dailydiarydesign_parent"/>
+
+                                <RatingBar
+                                    android:id="@+id/ruleRatingBar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="170dp"
+                                    android:isIndicator="true"
+                                    android:numStars="5"
+                                    android:progressTint="#FFEE58"
+                                    android:rating="5"
+                                    android:scaleX="0.7"
+                                    android:scaleY="0.7"
+                                    android:stepSize="0.2" />
+                            </RelativeLayout>
+                        </HorizontalScrollView>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="0.2dp"
+                            android:background="@android:color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teacher's Remarks"
+                            android:layout_marginTop="20dp"
+                            android:textColor="#01579B"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="130dp"
+                            android:textSize="20dp"/>
+                        <TextView
+                            android:id="@+id/remarks_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:text="Teacher remarks"
+                            android:paddingLeft="25dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginRight="35dp"
+                            android:background="@drawable/remarks_designs"
+                            android:layout_marginBottom="20dp"
+                            ></TextView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>
+
