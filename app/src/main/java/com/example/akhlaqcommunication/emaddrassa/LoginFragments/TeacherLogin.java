@@ -86,6 +86,7 @@ public class TeacherLogin extends Fragment {
                         }
                         @Override
                         public void OnFailure(String err) {
+                            Log.e(TAG, "OnFailure: "+err );
 
                         }
                     });

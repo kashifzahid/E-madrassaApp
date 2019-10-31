@@ -42,6 +42,7 @@
 
             <Spinner
                 android:layout_width="180dp"
+                android:id="@+id/spinner_student"
                 android:layout_height="match_parent">
             </Spinner>
 
@@ -127,7 +128,7 @@
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical">
@@ -184,6 +185,7 @@
 
                             <Spinner
                                 android:layout_width="100dp"
+                                android:id="@+id/spinner_new_surah"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -198,6 +200,7 @@
 
                             <Spinner
                                 android:layout_width="90dp"
+                                android:id="@+id/spinner_new_from"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -221,6 +224,7 @@
 
                             <Spinner
                                 android:layout_width="90dp"
+                                android:id="@+id/spinner_new_to"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -267,6 +271,7 @@
 
                             <Spinner
                                 android:layout_width="100dp"
+                                android:id="@+id/spinner_sabq_surah"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -281,6 +286,7 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_sabq_from"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -304,11 +310,13 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_sabq_to"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:visibility="visible"
                             android:layout_width="70dp"
                             android:layout_height="35dp"
                             android:layout_marginLeft="10dp"
@@ -318,6 +326,7 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_sabq_grade"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -364,6 +373,7 @@
 
                             <Spinner
                                 android:layout_width="100dp"
+                                android:id="@+id/spinner_sabqi_surah"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -378,6 +388,7 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_sabqi_from"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -401,6 +412,7 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_sabqi_to"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -411,10 +423,12 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="2dp"
-                            android:background="@drawable/spin_design">
+                            android:background="@drawable/spin_design"
+                            android:visibility="visible">
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_sabqi_grade"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -460,6 +474,7 @@
 
                             <Spinner
                                 android:layout_width="100dp"
+                                android:id="@+id/spinner_manzil_ayat"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -474,6 +489,7 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_manzil_from"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -497,6 +513,7 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_manzil_to"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -511,6 +528,7 @@
 
                             <Spinner
                                 android:layout_width="70dp"
+                                android:id="@+id/spinner_manzil_grade"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -543,6 +561,7 @@
 
                     <Spinner
                         android:layout_width="70dp"
+                        android:id="@+id/spinner_academics_grade"
                         android:layout_height="match_parent"></Spinner>
                 </RelativeLayout>
             </LinearLayout>
@@ -726,13 +745,24 @@
 
                 android:textSize="18dp" />
 
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text=" Maghrib"
+                android:textColor="#01579B"
+                android:textSize="18dp" />
+
             <HorizontalScrollView
                 android:id="@+id/horizone_7"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:fillViewport="true"
                 android:measureAllChildren="false"
-                android:scrollbars="none" >
+                android:scrollbars="none">
 
 
                 <LinearLayout
@@ -754,8 +784,8 @@
                             android:id="@+id/asar_bajamat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:checked="true"
                             android:buttonTint="@color/radio_btn_color"
+                            android:checked="true"
 
                             android:text="Ba jamat" />
 
@@ -770,11 +800,11 @@
 
                         <RadioButton
                             android:id="@+id/asar_qaza"
-                            android:buttonTint="@color/radio_btn_color"
-
                             android:layout_width="wrap_content"
+
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
+                            android:buttonTint="@color/radio_btn_color"
                             android:text="Qaza" />
 
                         <RadioButton
@@ -782,25 +812,13 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:text="Not Offered"
                             android:buttonTint="@color/radio_btn_color"
-                            />
+                            android:text="Not Offered" />
 
                     </RadioGroup>
 
                 </LinearLayout>
             </HorizontalScrollView>
-
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text=" Maghrib"
-                android:textColor="#01579B"
-                android:textSize="18dp" />
 
             <HorizontalScrollView
                 android:id="@+id/horizone_8"
@@ -993,7 +1011,7 @@
                     android:textStyle="bold" />
 
                 <HorizontalScrollView
-                    android:id="@+id/horizone_5"
+                    android:id="@+id/horizone_11"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:fillViewport="true"

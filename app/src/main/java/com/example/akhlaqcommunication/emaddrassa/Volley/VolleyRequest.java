@@ -65,4 +65,52 @@ public class VolleyRequest {
         requestQueue.add(request3);
 
     }
+    public static void GetRequest(Context context, String uri, final VolleyPostCallBack callBack) {
+        Log.d("s", "sendData: started ");
+
+        JsonObjectRequest request3 = new JsonObjectRequest(Request.Method.GET, uri,null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.e(TAG, "onResponse: send Successfully" );
+                try {
+                    callBack.OnSuccess(response.getJSONObject("status"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                callBack.OnFailure(error.getMessage());
+                Log.d("failed", "onResponsefail: " + error);
+                // callback.onError("There is connection Error" + error);
+            }
+
+        });
+
+        request3.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 50000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 50000;
+            }
+
+            @Override
+            public void retry(VolleyError error) {
+
+            }
+        });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context.getApplicationContext());
+
+        requestQueue.add(request3);
+
+    }
 }

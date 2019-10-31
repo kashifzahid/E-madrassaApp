@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 import com.example.akhlaqcommunication.emaddrassa.R;
@@ -25,6 +27,7 @@ public class Dashboard extends AppCompatActivity {
     LinearLayout assignment_layout,clas_layout,attendence_layout,exam_layout,result_layout;
     private Button daily_diarybtn;
     private String class_id,teacher_id;
+    private TextView total,present,absent;
     private SharedPreferenceEdit sharedPreferenceEdit;
 
     @Override
@@ -36,24 +39,29 @@ public class Dashboard extends AppCompatActivity {
         mtoolbar = findViewById(R.id.dashboard_toolbar);
         setSupportActionBar(mtoolbar);
         getSupportActionBar().setTitle("Dashboard");
+        total=findViewById(R.id.no_of_total_students);
+        present=findViewById(R.id.no_of_present_students);
+        absent=findViewById(R.id.no_of_absent_students);
          sharedPreferenceEdit=new SharedPreferenceEdit(Dashboard.this);
         String status=sharedPreferenceEdit.GetClassStatus();
         teacher_id=sharedPreferenceEdit.GetDriverId();
         if(status.equals("login")){
 
             class_id=sharedPreferenceEdit.GetClassId();
+            getDashboard(class_id);
         }else{
             getClassId();
         }
-        getDashboard();
+
 
     }
 
-    private void getDashboard() {
+    private void getDashboard(String id) {
 
             JSONObject jsonObject=new JSONObject();
             try {
-                jsonObject.put("screen","TeacherDasboard");
+                jsonObject.put("screen","TeacherDashboard");
+                Log.e("tag", "getDashboard: "+class_id );
                 jsonObject.put("id",class_id);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -64,9 +72,13 @@ public class Dashboard extends AppCompatActivity {
                 @Override
                 public void OnSuccess(JSONObject jsonObject) {
                     try {
-                        String total=jsonObject.getString("total");
-                        String absent=jsonObject.getString("absent");
-                        String attend=jsonObject.getString("attend");
+                        String totals=jsonObject.getString("total");
+                        String absents=jsonObject.getString("absent");
+                        String attends=jsonObject.getString("attend");
+
+                        total.setText(totals);
+                        absent.setText(absents);
+                        present.setText(attends);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -98,7 +110,11 @@ public class Dashboard extends AppCompatActivity {
             public void OnSuccess(JSONObject jsonObject) {
                 try {
                     class_id=jsonObject.getString("ClassId");
+                    Log.e("tag", "OnSuccess: "+class_id );
+
+
                     sharedPreferenceEdit.AddClassId(class_id);
+                    getDashboard(class_id);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

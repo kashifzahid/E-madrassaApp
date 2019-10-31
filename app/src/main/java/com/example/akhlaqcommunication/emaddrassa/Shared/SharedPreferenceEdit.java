@@ -2,6 +2,9 @@ package com.example.akhlaqcommunication.emaddrassa.Shared;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
+import static com.android.volley.VolleyLog.TAG;
 
 public class SharedPreferenceEdit {
     private Context context;
@@ -49,6 +52,7 @@ public class SharedPreferenceEdit {
     public String GetClassId() {
         SharedPreferences prefs = context.getSharedPreferences("CLASS_PREF", Context.MODE_PRIVATE);
         String classStatus = prefs.getString("CLASS_ID", "");
+        Log.e(TAG, "GetClassId: "+classStatus );
         return classStatus;
     }
 }

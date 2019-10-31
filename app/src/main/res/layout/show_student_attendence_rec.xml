@@ -9,7 +9,8 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
+            android:padding="10dp"
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -17,6 +18,7 @@
                 android:id="@+id/std_profile_image"
                 android:layout_width="76dp"
                 android:layout_height="76dp"
+                android:visibility="gone"
                 android:src="@drawable/profileicon"
                 app:civ_border_width="2dp"
                 android:layout_marginTop="15dp"
@@ -28,9 +30,10 @@
                 android:id="@+id/student_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Ahmed"
-                android:layout_marginLeft="105dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -38,7 +41,8 @@
                 android:id="@+id/student_roll_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="105dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
                 android:text="Roll No.165"
                 android:textSize="17sp"
                 android:layout_below="@id/student_name" />
@@ -50,7 +54,8 @@
                 android:text="First Semester"
                 android:textSize="15sp"
                 android:layout_below="@id/student_roll_number"
-                android:layout_marginLeft="105dp"/>
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"/>
 
             <TextView
                 android:id="@+id/student_class"
@@ -58,73 +63,114 @@
                 android:layout_height="wrap_content"
                 android:text="Class: A"
                 android:textSize="15sp"
-                android:layout_marginLeft="105dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="20dp"
                 android:layout_below="@id/student_semester"/>
+            <RadioGroup
 
-            <LinearLayout
+                android:id="@+id/radioGroupfajar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/attendence_radio"
-                android:orientation="vertical"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="100dp"
-                android:layout_alignParentRight="true">
+
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
 
                 <RadioButton
+                    android:id="@+id/present"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
                     android:buttonTint="@color/radio_btn_color"
-                    android:id="@+id/present_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Present"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/attendence_radio2"
-                android:orientation="vertical"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="48dp"
-                android:layout_alignParentRight="true">
+                    android:text="Present" />
 
                 <RadioButton
+                    android:id="@+id/absent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Absent"
                     android:buttonTint="@color/radio_btn_color"
-                    android:id="@+id/absent_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Absent"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/attendence_radio4"
-                android:orientation="vertical"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="5dp"
-                android:layout_alignParentRight="true">
+                    />
 
                 <RadioButton
-                    android:buttonTint="@color/radio_btn_color"
-                    android:id="@+id/late_radio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
+                    android:id="@+id/late"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:text="Late"/>
+                    android:layout_marginLeft="5dp"
+                    android:text="Late"
+                    android:buttonTint="@color/radio_btn_color"
+                    />
 
-            </LinearLayout>
+
+
+            </RadioGroup>
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/attendence_radio"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginTop="40dp"-->
+                <!--android:layout_marginRight="100dp"-->
+                <!--android:layout_alignParentRight="true">-->
+
+                <!--<RadioButton-->
+                    <!--android:buttonTint="@color/radio_btn_color"-->
+                    <!--android:id="@+id/present_radio"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="5dp"/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Present"/>-->
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/attendence_radio2"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginTop="40dp"-->
+                <!--android:layout_marginRight="48dp"-->
+                <!--android:layout_alignParentRight="true">-->
+
+                <!--<RadioButton-->
+                    <!--android:buttonTint="@color/radio_btn_color"-->
+                    <!--android:id="@+id/absent_radio"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="5dp"/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Absent"/>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/attendence_radio4"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_marginTop="40dp"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_alignParentRight="true">-->
+
+                <!--<RadioButton-->
+                    <!--android:buttonTint="@color/radio_btn_color"-->
+                    <!--android:id="@+id/late_radio"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="2dp"-->
+                    <!--android:text="Late"/>-->
+
+            <!--</LinearLayout>-->
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
