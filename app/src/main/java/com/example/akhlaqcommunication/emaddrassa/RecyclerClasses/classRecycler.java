@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.akhlaqcommunication.emaddrassa.Model.Modelclass;
 import com.example.akhlaqcommunication.emaddrassa.R;
 
 import java.util.List;

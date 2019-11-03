@@ -15,7 +15,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.akhlaqcommunication.emaddrassa.R;
-import com.example.akhlaqcommunication.emaddrassa.RecyclerClasses.ModelSurah;
+import com.example.akhlaqcommunication.emaddrassa.Model.ModelSurah;
 import com.example.akhlaqcommunication.emaddrassa.Volley.Urls;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyPostCallBack;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyRequest;
@@ -25,7 +25,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class DailyDiary extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 

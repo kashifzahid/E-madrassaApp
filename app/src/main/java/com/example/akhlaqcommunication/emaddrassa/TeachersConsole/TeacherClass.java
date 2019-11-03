@@ -10,7 +10,7 @@ import android.util.Log;
 
 import com.example.akhlaqcommunication.emaddrassa.R;
 import com.example.akhlaqcommunication.emaddrassa.RecyclerClasses.classRecycler;
-import com.example.akhlaqcommunication.emaddrassa.RecyclerClasses.Modelclass;
+import com.example.akhlaqcommunication.emaddrassa.Model.Modelclass;
 import com.example.akhlaqcommunication.emaddrassa.Shared.SharedPreferenceEdit;
 import com.example.akhlaqcommunication.emaddrassa.Volley.Urls;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyPostCallBack;

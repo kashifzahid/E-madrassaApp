@@ -3,20 +3,29 @@ package com.example.akhlaqcommunication.emaddrassa.RecyclerClasses;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.akhlaqcommunication.emaddrassa.Interface.OnOptionSelected;
+import com.example.akhlaqcommunication.emaddrassa.Model.AttendenceModel;
 import com.example.akhlaqcommunication.emaddrassa.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class attendence_recycler extends RecyclerView.Adapter<attendence_recycler.ViewHolder> {
-    public int mSelectedItem = -1;
+
+    private String TAG = "attendence_recycler";
+
+    public int mSelectedItem = 1;
     private Context context;
     private List<attendence_modelclass> modelClassList;
 
@@ -33,24 +42,55 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
         return  new ViewHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull attendence_recycler.ViewHolder viewHolder, int i) {
+    private RadioGroup lastCheckedRadioGroup = null;
+    ArrayList<String> selected = new ArrayList<>();
 
-        attendence_modelclass modelClass = modelClassList.get(i);
+    public void setOnOptionSelected(OnOptionSelected onOptionSelected) {
+        this.onOptionSelected = onOptionSelected;
+    }
+
+    private OnOptionSelected onOptionSelected;
+
+    public List<attendence_modelclass> getAttendenceModels() {
+        return modelClassList;
+    }
+
+    public void setAttendenceModels(List<attendence_modelclass> attendenceModels) {
+        this.modelClassList = attendenceModels;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final attendence_recycler.ViewHolder viewHolder, int position) {
+
+        attendence_modelclass modelClass = modelClassList.get(position);
         viewHolder.proifle_image.setImageResource(R.drawable.profileicon);
         viewHolder.std_name.setText(modelClass.getStudent_name());
         viewHolder.std_roll_num.setText(modelClass.getStudent_roll_number());
         viewHolder.std_semster.setText(modelClass.getStudent_semster());
         viewHolder.std_class.setText(modelClass.getStudent_class());
-        viewHolder.radio_present.setChecked( i == mSelectedItem);
-        viewHolder.radio_absent.setChecked(i == mSelectedItem);
-        viewHolder.radio_late.setChecked(i == mSelectedItem);
+//        viewHolder.radio_present.setChecked( position == mSelectedItem);
+//        viewHolder.radio_absent.setChecked(position == mSelectedItem);
+//        viewHolder.radio_late.setChecked(position == mSelectedItem);
+
+        Log.e("POSITION" + position, "1" + modelClass.isOp1Sel());
+
+        Log.e("POSITION" + position, "2" + modelClass.isOp2Sel());
+        Log.e("POSITION" + position, "3" + modelClass.isOp3Sel());
+
+
+        viewHolder.radio_present.setChecked(modelClass.isOp1Sel());
+        viewHolder.radio_absent.setChecked(modelClass.isOp2Sel());
+        viewHolder.radio_late.setChecked(modelClass.isOp3Sel());
+
 
     }
 
     @Override
     public int getItemCount() {
-        return modelClassList.size();
+        if (modelClassList != null) {
+            return modelClassList.size();
+        }
+        return 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -58,6 +98,7 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
         CircleImageView proifle_image;
         TextView std_name,std_roll_num,std_semster,std_class;
         RadioButton radio_present,radio_absent,radio_late;
+        RadioGroup radioGroupatten;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,17 +112,31 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
             radio_absent = itemView.findViewById(R.id.absent);
             radio_late = itemView.findViewById(R.id.late);
 
+
             View.OnClickListener clickListener = new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mSelectedItem = getAdapterPosition();
-                    notifyDataSetChanged();
+
+                    switch (v.getId()) {
+                        case R.id.present:
+                            onOptionSelected.onOptionSelected(getAdapterPosition(), 1);
+                            Log.d(TAG, "Position "+getAdapterPosition()+" Selected");
+                            break;
+
+                        case R.id.absent:
+                            onOptionSelected.onOptionSelected(getAdapterPosition(), 2);
+                            break;
+
+                        case R.id.late:
+                            onOptionSelected.onOptionSelected(getAdapterPosition(), 3);
+                            break;
+                    }
                 }
             };
+
             radio_present.setOnClickListener(clickListener);
             radio_absent.setOnClickListener(clickListener);
             radio_late.setOnClickListener(clickListener);
-
 
         }
     }

@@ -6,7 +6,63 @@ public class attendence_modelclass {
     String student_name,student_roll_number,student_semster,student_class;
     String radio_present,radio_absent,radio_late;
 
-    public attendence_modelclass(int profile_image, String student_name, String student_roll_number, String student_semster, String student_class, String radio_present, String radio_absent, String radio_late) {
+    private int selectedPosition;
+    private String selected;
+    private boolean op1Sel,op2Sel,op3Sel;
+
+    public boolean isOp1Sel() {
+        return op1Sel;
+    }
+
+    public void setOp1Sel(boolean op1Sel) {
+        this.op1Sel = op1Sel;
+        if(op1Sel){ // To make sure only one option is selected at a time
+            setOp2Sel(false);
+            setOp3Sel(false);
+        }
+    }
+
+    public boolean isOp2Sel() {
+        return op2Sel;
+    }
+
+    public void setOp2Sel(boolean op2Sel) {
+        this.op2Sel = op2Sel;
+        if(op2Sel){
+            setOp1Sel(false);
+            setOp3Sel(false);
+        }
+    }
+
+    public boolean isOp3Sel() {
+        return op3Sel;
+    }
+
+    public void setOp3Sel(boolean op3Sel) {
+        this.op3Sel = op3Sel;
+        if(op3Sel){
+            setOp2Sel(false);
+            setOp1Sel(false);
+        }
+    }
+
+    public int getSelectedPosition() {
+        return selectedPosition;
+    }
+
+    public void setSelectedPosition(int selectedPosition) {
+        this.selectedPosition = selectedPosition;
+    }
+
+    public String getSelected() {
+        return selected;
+    }
+
+    public void setSelected(String selected) {
+        this.selected = selected;
+    }
+
+    public attendence_modelclass(int profile_image, String student_name, String student_roll_number, String student_semster, String student_class) {
         this.profile_image = profile_image;
         this.student_name = student_name;
         this.student_roll_number = student_roll_number;

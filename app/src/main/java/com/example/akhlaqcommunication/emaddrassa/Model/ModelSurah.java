@@ -1,4 +1,4 @@
-package com.example.akhlaqcommunication.emaddrassa.RecyclerClasses;
+package com.example.akhlaqcommunication.emaddrassa.Model;
 
 public class ModelSurah {
 
