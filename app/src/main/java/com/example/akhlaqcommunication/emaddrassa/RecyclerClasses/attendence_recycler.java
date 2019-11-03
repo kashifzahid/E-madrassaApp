@@ -67,9 +67,9 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
             std_roll_num = itemView.findViewById(R.id.student_roll_number);
             std_semster = itemView.findViewById(R.id.student_semester);
             std_class = itemView.findViewById(R.id.student_class);
-            radio_present = itemView.findViewById(R.id.present_radio);
-            radio_absent = itemView.findViewById(R.id.absent_radio);
-            radio_late = itemView.findViewById(R.id.late_radio);
+            radio_present = itemView.findViewById(R.id.present);
+            radio_absent = itemView.findViewById(R.id.absent);
+            radio_late = itemView.findViewById(R.id.late);
 
             View.OnClickListener clickListener = new View.OnClickListener() {
                 @Override

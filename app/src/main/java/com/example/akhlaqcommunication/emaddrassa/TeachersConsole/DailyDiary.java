@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.akhlaqcommunication.emaddrassa.R;
+import com.example.akhlaqcommunication.emaddrassa.RecyclerClasses.ModelSurah;
 import com.example.akhlaqcommunication.emaddrassa.Volley.Urls;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyPostCallBack;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyRequest;
@@ -20,12 +24,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DailyDiary extends AppCompatActivity {
+public class DailyDiary extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Toolbar mtoolbar;
     private Spinner student,new_surah,sabq_surah,sabqi_surah,manzil_surah,new_from,sabq_from,sabqi_from,manzil_from,new_to,sabq_to,sabqi_to,manzil_to,sabq_grade,sabqi_grade,manzil_grade;
     private ArrayList<String> students;
     private ArrayList<String> surah;
+    private ArrayList<ModelSurah> surahs;
 
     private Context context;
     @Override
@@ -39,6 +44,7 @@ public class DailyDiary extends AppCompatActivity {
         getSupportActionBar().setTitle("Daily Diary");
         context=this;
         surah=new ArrayList<>();
+        surahs=new ArrayList<>();
         //Spinner
         student=findViewById(R.id.spinner_student);
         //surah spinner
@@ -64,6 +70,12 @@ public class DailyDiary extends AppCompatActivity {
         manzil_grade=findViewById(R.id.spinner_manzil_grade);
 
         getSurah();
+
+        new_surah.setOnItemSelectedListener(this);
+
+
+
+
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -91,7 +103,10 @@ public class DailyDiary extends AppCompatActivity {
                        String surah_no= js.getString("Surah_no");
                         Log.e("tag", "OnSuccess: "+surah_no );
                        String ayat= js.getString("Total_ayat");
+                        int ayats=Integer.parseInt(ayat);
                      String name= js.getString("Surah_name");
+                        surahs.add(new ModelSurah(name,surah_no,surah_id,ayats));
+
                         surah.add(name);
 
                     }
@@ -108,5 +123,16 @@ public class DailyDiary extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
