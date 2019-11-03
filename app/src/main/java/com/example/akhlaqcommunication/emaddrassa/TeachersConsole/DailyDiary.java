@@ -129,6 +129,7 @@ public class DailyDiary extends AppCompatActivity implements AdapterView.OnItemS
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
 
+
     }
 
     @Override
