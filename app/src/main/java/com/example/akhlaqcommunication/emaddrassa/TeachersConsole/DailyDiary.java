@@ -116,7 +116,7 @@ public class DailyDiary extends AppCompatActivity implements AdapterView.OnItemS
 
     }
 
-    public void SubmitDiary(View view) {
+    public void SubmitDiary(View view) throws JSONException {
 
         // Surah
         String neww = surahs.get(new_surah.getSelectedItemPosition()).getSurah_number();
@@ -125,16 +125,16 @@ public class DailyDiary extends AppCompatActivity implements AdapterView.OnItemS
         String manzil = surahs.get(manzil_surah.getSelectedItemPosition()).getSurah_number();
 
         // from
-        String from_new = surahs.get(new_from.getSelectedItemPosition()).getSurah_id();
-        String from_sabq = surahs.get(sabq_from.getSelectedItemPosition()).getSurah_id();
-        String from_sabqi = surahs.get(sabqi_from.getSelectedItemPosition()).getSurah_id();
-        String from_manzil = surahs.get(manzil_from.getSelectedItemPosition()).getSurah_id();
+        String from_new =(String)  new_from.getSelectedItem();
+        String from_sabq = (String)  sabq_from.getSelectedItem();
+        String from_sabqi = (String)  sabqi_from.getSelectedItem();
+        String from_manzil = (String)  manzil_from.getSelectedItem();
 
         // to
-        String to_new = surahs.get(new_to.getSelectedItemPosition()).getSurah_id();
-        String to_sabq = surahs.get(sabq_to.getSelectedItemPosition()).getSurah_id();
-        String to_sabqi = surahs.get(sabqi_to.getSelectedItemPosition()).getSurah_id();
-        String to_manzil = surahs.get(manzil_to.getSelectedItemPosition()).getSurah_id();
+        String to_new    = (String) new_to.getSelectedItem();
+        String to_sabq   = (String)  sabq_to.getSelectedItem();
+        String to_sabqi  = (String) sabqi_to.getSelectedItem();
+        String to_manzil = (String) manzil_to.getSelectedItem();
 
         // grade
         String grade_sabq = (String) sabq_grade.getSelectedItem();
@@ -162,6 +162,74 @@ public class DailyDiary extends AppCompatActivity implements AdapterView.OnItemS
         RadioButton radioButtonmaghrib = (RadioButton) findViewById(selectedIdmaghrib);
         RadioButton radioButtonasar = (RadioButton) findViewById(selectedIdasar);
         RadioButton radioButtonisha = (RadioButton) findViewById(selectedIdisha);
+        String fajr=radioButtonfajar.getText().toString();
+        String zuhr=radioButtonzuhar.getText().toString();
+        String asr=radioButtonasar.getText().toString();
+        String mag=radioButtonmaghrib.getText().toString();
+        String isha=radioButtonisha.getText().toString();
+
+        //DAILY DIARY OBJECT
+        JSONObject jsonObject=new JSONObject();
+        //NEW SABQ OBJECT
+        JSONObject nsobject=new JSONObject();
+        nsobject.put("surah",neww);
+        nsobject.put("from",from_new);
+        nsobject.put("to",to_new);
+        //SABQ OBJECT
+
+        JSONObject sobject=new JSONObject();
+        sobject.put("surah",sabq);
+        sobject.put("from",from_sabq);
+        sobject.put("to",to_sabq);
+        sobject.put("grade",grade_sabq);
+        //SABQI OBJECT
+
+        JSONObject siobject=new JSONObject();
+        siobject.put("surah",sabqi);
+        siobject.put("from",from_sabqi);
+        siobject.put("to",to_sabqi);
+        siobject.put("grade",grade_sabqi);
+        //MANZIL OBJECT
+        JSONObject mobject=new JSONObject();
+        mobject.put("surah",manzil);
+        mobject.put("from",from_manzil);
+        mobject.put("to",to_manzil);
+        mobject.put("grade",grade_manzil);
+        JSONObject naobject=new JSONObject();
+        naobject.put("fajr",fajr);
+        naobject.put("zuhr",zuhr);
+        naobject.put("asar",asr);
+        naobject.put("maghrib",mag);
+        naobject.put("isha",isha);
+        naobject.put("grade",grade_namaz);
+
+        String remarks=teacher_remarks.getText().toString();
+         //put json objects
+        jsonObject.put("new_sabq_object",nsobject);
+        jsonObject.put("sabq_object",sobject);
+        jsonObject.put("sabqi_object",siobject);
+        jsonObject.put("manzil_object",mobject);
+        jsonObject.put("namaz",naobject);
+        jsonObject.put("remarks",remarks);
+        jsonObject.put("overall",grade_overall);
+
+
+        Log.e(TAG, "SubmitDiary: "+jsonObject );
+        String url = Urls.PostDiary ;
+        //Post Request
+        VolleyRequest.PostRequest(context, url, jsonObject, new VolleyPostCallBack() {
+            @Override
+            public void OnSuccess(JSONObject jsonObject) {
+
+
+            }
+
+            @Override
+            public void OnFailure(String err) {
+
+            }
+        });
+
 
 
     }

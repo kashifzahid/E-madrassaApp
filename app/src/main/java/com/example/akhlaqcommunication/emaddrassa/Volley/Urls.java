@@ -11,4 +11,5 @@ public class Urls {
     public static final String TeacherStudents=Teacher+"Students";
     public static final String Academics=url+"Academics/";
     public static final String GetSurah=Academics+"GetSurah";
+    public static final String PostDiary=Academics+"PostDiary";
 }
