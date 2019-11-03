@@ -474,7 +474,7 @@
 
                             <Spinner
                                 android:layout_width="100dp"
-                                android:id="@+id/spinner_manzil_ayat"
+                                android:id="@+id/spinner_manzil_surah"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
@@ -982,6 +982,7 @@
                     android:background="@drawable/spin_design">
 
                     <Spinner
+                        android:id="@+id/spinner_namaz_grade"
                         android:layout_width="70dp"
                         android:layout_height="match_parent"></Spinner>
 
@@ -1041,12 +1042,14 @@
                             android:background="@drawable/spin_design">
 
                             <Spinner
+                                android:id="@+id/spinner_overall_grade"
                                 android:layout_width="70dp"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>
 
                         <RatingBar
+                            android:visibility="gone"
                             android:id="@+id/ruleRatingBar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -1088,7 +1091,7 @@
                     android:paddingLeft="25dp">
 
                     <EditText
-                        android:id="@+id/remarks_parent"
+                        android:id="@+id/remarks_teacher"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:hint="Teacher remarks"
@@ -1107,6 +1110,7 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/teacherdashboard_diarybutton"
                     android:text="Submit"
+                    android:onClick="SubmitDiary"
                     android:textColor="@color/Textcolor" />
 
             </LinearLayout>
