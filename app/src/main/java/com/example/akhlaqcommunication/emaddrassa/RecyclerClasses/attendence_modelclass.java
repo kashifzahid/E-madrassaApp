@@ -3,7 +3,20 @@ package com.example.akhlaqcommunication.emaddrassa.RecyclerClasses;
 public class attendence_modelclass {
 
     int profile_image;
-    String student_name,student_roll_number,student_semster,student_class;
+    String student_name;
+    String student_roll_number;
+    String student_semster;
+    String student_class;
+
+    public String getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(String student_id) {
+        this.student_id = student_id;
+    }
+
+    String student_id;
     String radio_present,radio_absent,radio_late;
 
     private int selectedPosition;
@@ -62,7 +75,8 @@ public class attendence_modelclass {
         this.selected = selected;
     }
 
-    public attendence_modelclass(int profile_image, String student_name, String student_roll_number, String student_semster, String student_class) {
+    public attendence_modelclass(String student_id, int profile_image, String student_name, String student_roll_number, String student_semster, String student_class) {
+        this.student_id = student_id;
         this.profile_image = profile_image;
         this.student_name = student_name;
         this.student_roll_number = student_roll_number;
