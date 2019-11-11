@@ -74,7 +74,7 @@ public class TeacherLogin extends Fragment {
                                     pass.setText("");
                                 }else{
                                     SharedPreferenceEdit sharedPreferenceEdit=new SharedPreferenceEdit(getActivity());
-                                    sharedPreferenceEdit.AddDriverId(status);
+                                    sharedPreferenceEdit.AddDriverId(status,"teacher");
                                     Intent intent=new Intent(getContext(), Dashboard.class);
                                     startActivity(intent);
                                 }

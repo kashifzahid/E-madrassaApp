@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.akhlaqcommunication.emaddrassa.ParentConsole.ParentDashboard;
 import com.example.akhlaqcommunication.emaddrassa.Shared.SharedPreferenceEdit;
 import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.Dashboard;
 import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.TeacherLogin;
@@ -57,8 +58,17 @@ import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.TeacherLogin;
                                 SharedPreferenceEdit sharedPreferenceEdit=new SharedPreferenceEdit(Splash.this);
                                 String status=sharedPreferenceEdit.GetLoginStatus();
                                 if(status.equals("login")){
+                                    String type=sharedPreferenceEdit.GetLoginType();
+                                    if(type.equals("parent")){
+                                        Intent intent = new Intent(getApplicationContext(), ParentDashboard.class);
+                                        startActivity(intent);
+
+                                    }else if(type.equals("teacher")){
+
+
                                     Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                                     startActivity(intent);
+                                    }
                                 }else{
                                     Intent intent = new Intent(getApplicationContext(), TeacherLogin.class);
                                     startActivity(intent);

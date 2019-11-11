@@ -138,6 +138,7 @@ public class Dashboard extends AppCompatActivity {
         startActivity(openattnds);
     }
     public void openAttendence(View v) {
+
         Intent openattnds = new Intent(getApplicationContext(),Teacherattendence.class);
         startActivity(openattnds);
     }
@@ -150,7 +151,8 @@ public class Dashboard extends AppCompatActivity {
         startActivity(openassignment);
     }
     public void opendailydiary(View v) {
-        Intent opendiary = new Intent(getApplicationContext(),DailyDiary.class);
+        Intent opendiary = new Intent(getApplicationContext(),StudentSelect.class);
+        opendiary.putExtra("class_name","diary");
         startActivity(opendiary);
     }
     public void openteacherevent(View V){

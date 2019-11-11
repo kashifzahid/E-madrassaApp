@@ -1,16 +1,16 @@
 package com.example.akhlaqcommunication.emaddrassa.TeachersConsole;
 
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
+import com.example.akhlaqcommunication.emaddrassa.Model.Modelclass;
 import com.example.akhlaqcommunication.emaddrassa.R;
 import com.example.akhlaqcommunication.emaddrassa.RecyclerClasses.classRecycler;
-import com.example.akhlaqcommunication.emaddrassa.Model.Modelclass;
 import com.example.akhlaqcommunication.emaddrassa.Shared.SharedPreferenceEdit;
 import com.example.akhlaqcommunication.emaddrassa.Volley.Urls;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyPostCallBack;
@@ -21,39 +21,35 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class TeacherClass extends AppCompatActivity {
-
-    private Toolbar mtoolbar;
-    private RecyclerView recyclerView;
-    private classRecycler adaptor;
-    List<Modelclass> modelClassList;
+public class StudentSelect extends AppCompatActivity {
+    private Spinner student;
+    private ArrayList<String> studentList;
+    private ArrayList<Modelclass> modelClassList;
     private SharedPreferenceEdit sharedPreferenceEdit;
-    private String class_id;
-   private Context context;
+    private String class_id,class_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_class);
-
-        mtoolbar = findViewById(R.id.teacher_class_toolbar);
-        setSupportActionBar(mtoolbar);
-        getSupportActionBar().setTitle("Class");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        context=this;
-        sharedPreferenceEdit=new SharedPreferenceEdit(TeacherClass.this);
+        setContentView(R.layout.activity_student_select);
+        studentList=new ArrayList<>();
+        modelClassList=new ArrayList<>();
+        student = findViewById(R.id.spinner_student);
+        Intent intent=getIntent();
+        class_name = intent.getStringExtra("class_name");
+        sharedPreferenceEdit=new SharedPreferenceEdit(StudentSelect.this);
 
         class_id=sharedPreferenceEdit.GetClassId();
-        modelClassList = new ArrayList<>();
-        recyclerView = findViewById(R.id.student_preview);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        getStudent(class_id);
+    }
+
+    private void getStudent(String id) {
         JSONObject jsonObject=new JSONObject();
         try {
             jsonObject.put("screen","TeacherAllStudents");
-            Log.e("tag", "getDashboard: "+class_id );
-            jsonObject.put("id",class_id);
+//            Log.e("tag", "getDashboard: "+id );
+            jsonObject.put("id",id);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -73,18 +69,20 @@ public class TeacherClass extends AppCompatActivity {
                         String roll = jsonObject.getString("StudentRollNo");
                         String pic = jsonObject.getString("StudentPic");
                         String semester_no=jsonObject.getString("semester_no");
+                        studentList.add(name);
                         modelClassList.add(new Modelclass(id,R.drawable.profileicon,name,roll,
                                 semester_no,"Class"));
 
                     }
+                    student.setAdapter(new ArrayAdapter<String>(StudentSelect.this, android.R.layout.simple_spinner_dropdown_item, studentList));
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
 
 
-                adaptor = new classRecycler(context, modelClassList);
-                recyclerView.setAdapter(adaptor);
+
             }
 
             @Override
@@ -93,6 +91,18 @@ public class TeacherClass extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void select_student(View view) {
+       String id= modelClassList.get(student.getSelectedItemPosition()).getId();
+        if(class_name.equals("diary")){
+            Intent intent=new Intent(StudentSelect.this,DailyDiary2.class);
+            intent.putExtra("id",id);
+            startActivity(intent);
+        }else if(class_name.equals("exams")){
+            Intent intent=new Intent(StudentSelect.this,TeacherExam.class);
+            startActivity(intent);
+        }
 
 
     }

@@ -65,9 +65,9 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
         attendence_modelclass modelClass = modelClassList.get(position);
         viewHolder.proifle_image.setImageResource(R.drawable.profileicon);
         viewHolder.std_name.setText(modelClass.getStudent_name());
-        viewHolder.std_roll_num.setText(modelClass.getStudent_roll_number());
-        viewHolder.std_semster.setText(modelClass.getStudent_semster());
-        viewHolder.std_class.setText(modelClass.getStudent_class());
+        viewHolder.std_roll_num.setText("Roll no : "+modelClass.getStudent_roll_number());
+        viewHolder.std_semster.setText("Semester no : "+modelClass.getStudent_semster());
+        viewHolder.std_class.setText("Class : "+modelClass.getStudent_class());
 //        viewHolder.radio_present.setChecked( position == mSelectedItem);
 //        viewHolder.radio_absent.setChecked(position == mSelectedItem);
 //        viewHolder.radio_late.setChecked(position == mSelectedItem);

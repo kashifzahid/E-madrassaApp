@@ -90,6 +90,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="12dp"
         android:layout_marginStart="40dp"
+        android:visibility="gone"
         android:weightSum="4"
         android:layout_below="@id/teacher_attendence_toolbar">
 
@@ -123,6 +124,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <TextView
@@ -131,33 +133,35 @@
             android:text="Total Present"
             android:textSize="22dp"
             android:textColor="#689F38"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"/>
+
+            android:layout_marginStart="15dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="22"
-            android:textSize="22dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"/>
+            android:id="@+id/present"
+            android:textSize="20dp"
+
+            android:layout_marginStart="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total Present"
+            android:text="Total Absent"
             android:textSize="22dp"
             android:textColor="#F44336"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"/>
+
+            android:layout_marginStart="15dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="04"
-            android:textSize="22dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"/>
+            android:textSize="20dp"
+            android:id="@+id/absent"
+
+            android:layout_marginStart="10dp"/>
     </LinearLayout>
     <View
         android:layout_marginTop="15dp"
@@ -175,21 +179,26 @@
         android:layout_marginTop="6dp"
         android:layout_marginLeft="155dp"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:id="@+id/teacher_attendence_history"
+
         android:layout_below="@id/teacher_attendence_toolbar">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date"
+            android:id="@+id/date"
             android:textColor="#01579B"
             android:textSize="18dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="95dp"/>
+
+            />
 
          <TextView
             android:layout_width="wrap_content"
@@ -197,10 +206,21 @@
             android:text="Status"
             android:textColor="#01579B"
             android:textSize="18dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="95dp"/>
+             android:layout_alignParentEnd="true"
+
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/attendence_recycler"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/parent_attendance_recycler_item"
+            tools:itemCount="2"
 
 
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_below="@id/date"/>
+
+    </RelativeLayout>
+
 
 </LinearLayout>
