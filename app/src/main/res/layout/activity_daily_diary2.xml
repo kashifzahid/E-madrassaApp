@@ -260,7 +260,7 @@
 
                         <RelativeLayout
                             android:visibility="visible"
-                            android:layout_width="70dp"
+                            android:layout_width="100dp"
                             android:layout_height="35dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="8dp"
@@ -318,7 +318,7 @@
                             android:text="No sabqi"/>
 
                         <RelativeLayout
-                            android:layout_width="70dp"
+                            android:layout_width="100dp"
                             android:layout_height="35dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="8dp"
@@ -374,7 +374,7 @@
                             android:id="@+id/text_manzil"
                             android:text="No manzil "/>
                         <RelativeLayout
-                            android:layout_width="70dp"
+                            android:layout_width="100dp"
                             android:layout_height="35dp"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="8dp"
@@ -382,7 +382,7 @@
                             android:background="@drawable/spin_design">
 
                             <Spinner
-                                android:layout_width="70dp"
+                                android:layout_width="100dp"
                                 android:id="@+id/spinner_manzil_grade"
                                 android:layout_height="match_parent"></Spinner>
 
@@ -830,7 +830,7 @@
                     android:textSize="20sp" />
 
                 <RelativeLayout
-                    android:layout_width="70dp"
+                    android:layout_width="100dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="17dp"
                     android:layout_marginTop="8dp"
@@ -839,7 +839,7 @@
 
                     <Spinner
                         android:id="@+id/spinner_namaz_grade"
-                        android:layout_width="70dp"
+                        android:layout_width="100dp"
                         android:layout_height="match_parent"></Spinner>
 
                 </RelativeLayout>
@@ -890,7 +890,7 @@
                             android:textSize="15sp" />
 
                         <RelativeLayout
-                            android:layout_width="70dp"
+                            android:layout_width="100dp"
                             android:layout_height="35dp"
                             android:layout_marginLeft="107dp"
                             android:layout_marginTop="8dp"
@@ -899,7 +899,7 @@
 
                             <Spinner
                                 android:id="@+id/spinner_overall_grade"
-                                android:layout_width="70dp"
+                                android:layout_width="100dp"
                                 android:layout_height="match_parent"></Spinner>
 
                         </RelativeLayout>

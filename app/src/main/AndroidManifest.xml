@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TeachersConsole.DailyDiary2"></activity>
+        <activity android:name=".ParentConsole.ParentDailyDiaryItems"></activity>
+        <activity android:name=".TeachersConsole.DailyDiary2" />
         <activity android:name=".TeachersConsole.StudentSelect" />
         <activity
             android:name=".ParentConsole.Parent_attendence"

@@ -101,7 +101,7 @@ public class DailyDiary2 extends AppCompatActivity implements AdapterView.OnItem
 
 
         overall_grade = findViewById(R.id.spinner_overall_grade);
-
+       status="yes";
 
         ArrayList<String> grade = new ArrayList<String>();
         grade.add("A");
@@ -113,12 +113,13 @@ public class DailyDiary2 extends AppCompatActivity implements AdapterView.OnItem
         manzil_grade.setAdapter(new ArrayAdapter<String>(DailyDiary2.this, android.R.layout.simple_spinner_dropdown_item, grade));
         namaz_grade.setAdapter(new ArrayAdapter<String>(DailyDiary2.this, android.R.layout.simple_spinner_dropdown_item, grade));
         overall_grade.setAdapter(new ArrayAdapter<String>(DailyDiary2.this, android.R.layout.simple_spinner_dropdown_item, grade));
-       status= getsabqstatus(id);
-        if (status.equals("yes")) {
-
-
-            getDiaryDetail(id);
-        }
+        getsabqstatus(id);
+//        if (status.equals("yes")) {
+//
+//
+//
+//        }
+        getDiaryDetail(id);
         getPara();
 new_para.setOnItemSelectedListener(this);
 new_surah_from.setOnItemSelectedListener(this);
@@ -128,16 +129,21 @@ new_surah_to.setOnItemSelectedListener(this);
 
     }
 
-    private String getsabqstatus(String id) {
+    private void getsabqstatus(String id) {
         String url = Urls.GetSabqStatus + "?screen=GETSABQSTATUS&id="+id;
-
+        Log.e(TAG, "getsabqstatus: "+url );
 
         VolleyRequest.GetRequest(context, url, new VolleyPostCallBack() {
+
             @Override
             public void OnSuccess(JSONObject jsonObject) {
+                Log.e(TAG, "OnSuccess called is : "+jsonObject );
                 try {
+
                     JSONArray jsonArray = jsonObject.getJSONArray("result");
+
                     int id=jsonArray.getJSONObject(0).getInt("id");
+                    Log.e(TAG, "OnSuccess:---------------------- "+id );
                     if(id==0){
                         status="no";
                     }else{
@@ -154,10 +160,11 @@ new_surah_to.setOnItemSelectedListener(this);
 
             @Override
             public void OnFailure(String err) {
+                Log.e(TAG, "OnFailure: "+err );
 
             }
         });
-        return status;
+
 
     }
 

@@ -152,7 +152,7 @@ public class ParentDashboard extends AppCompatActivity {
     }
 
     public void opendailydiary(View v) {
-        Intent opendiary = new Intent(getApplicationContext(), ParentDailyDiary.class);
+        Intent opendiary = new Intent(getApplicationContext(), ParentDailyDiaryItems.class);
         startActivity(opendiary);
     }
 

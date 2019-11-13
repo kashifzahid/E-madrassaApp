@@ -8,7 +8,39 @@ public class Modelclass {
     String student_semster;
     String student_class;
     String id;
-    String date,status;
+    String date,status,teacher,remarks,grade;
+
+    public Modelclass(String id,String date,  String teacher, String remarks, String grade) {
+        this.id=id;
+        this.date = date;
+        this.teacher = teacher;
+        this.remarks = remarks;
+        this.grade = grade;
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 
     public Modelclass(String date, String status) {
         this.date = date;

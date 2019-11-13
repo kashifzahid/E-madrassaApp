@@ -67,11 +67,13 @@ public class VolleyRequest {
     }
     public static void GetRequest(Context context, String uri, final VolleyPostCallBack callBack) {
         Log.d("s", "sendData: started ");
+        Log.d("s", "sendData: started  url is jv jb "+uri);
 
         JsonObjectRequest request3 = new JsonObjectRequest(Request.Method.GET, uri,null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.e(TAG, "onResponse: send Successfully" );
+                Log.e(TAG, "onResponse data is : "+response );
                 try {
                     callBack.OnSuccess(response.getJSONObject("status"));
                 } catch (JSONException e) {
