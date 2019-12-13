@@ -68,6 +68,8 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
         viewHolder.std_roll_num.setText("Roll no : "+modelClass.getStudent_roll_number());
         viewHolder.std_semster.setText("Semester no : "+modelClass.getStudent_semster());
         viewHolder.std_class.setText("Class : "+modelClass.getStudent_class());
+        viewHolder.radio_absent.setChecked(true);
+
 //        viewHolder.radio_present.setChecked( position == mSelectedItem);
 //        viewHolder.radio_absent.setChecked(position == mSelectedItem);
 //        viewHolder.radio_late.setChecked(position == mSelectedItem);

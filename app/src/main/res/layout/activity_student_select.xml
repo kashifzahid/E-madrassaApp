@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+android:background="#1D999595"
 
     tools:context=".TeachersConsole.StudentSelect">
     <RelativeLayout
         android:id="@+id/top_search"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -20,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search Student :"
-            android:textColor="#01579B"
+            android:textColor="#090808"
             android:textSize="20dp"
             android:layout_marginStart="30dp"
             android:id="@+id/text"
@@ -54,6 +56,7 @@
             android:layout_margin="30dp"
            android:text="Select"
             android:onClick="select_student"
+            android:textColor="#fff"
             android:background="@drawable/teacherdashboard_diarybutton"
             android:padding="10dp"
             android:layout_below="@id/relative_spinner"

@@ -26,6 +26,18 @@ public class SharedPreferenceEdit {
 
        editor.apply();
     }
+    public void ClearDriverId(){
+        SharedPreferences prefs = context.getSharedPreferences("LOGIN_PREF", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.clear();
+
+
+
+        editor.apply();
+    }
+
+
     public void AddStudentId(String id){
         SharedPreferences prefs = context.getSharedPreferences("STUDENT_PREF", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();

@@ -6,9 +6,9 @@
             <solid android:color="#64B5F6"/>
             <corners android:radius="10dp"/>
             <gradient
-                android:startColor="#90CAF9"
-                android:endColor="#2196F3"
-                android:angle="180" />
+                android:startColor="#C136D7"
+                android:endColor="#7B30FC"
+                android:angle="0" />
         </shape>
     </item>
 

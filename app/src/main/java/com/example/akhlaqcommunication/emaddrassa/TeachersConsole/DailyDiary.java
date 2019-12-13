@@ -337,4 +337,7 @@ public class DailyDiary extends AppCompatActivity  {
 
 
     }
+
+    public void SubmitDiary(View view) {
+    }
 }

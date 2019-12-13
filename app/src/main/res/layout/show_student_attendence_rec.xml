@@ -76,18 +76,19 @@
                 android:layout_toEndOf="@+id/student_roll_number"
                 android:layout_alignBottom="@+id/student_roll_number"
                 android:buttonTint="@color/radio_btn_color"
-                android:checked="true"
+
                 android:text="Present" />
 
             <RadioButton
                 android:id="@+id/absent"
-                android:checked="false"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_alignBottom="@+id/student_roll_number"
                 android:layout_toEndOf="@+id/present"
                 android:buttonTint="@color/radio_btn_color"
+                android:checked="true"
                 android:text="Absent" />
 
             <RadioButton

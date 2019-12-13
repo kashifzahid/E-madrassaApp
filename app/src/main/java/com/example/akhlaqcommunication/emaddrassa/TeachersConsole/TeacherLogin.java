@@ -1,5 +1,7 @@
 package com.example.akhlaqcommunication.emaddrassa.TeachersConsole;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
@@ -47,5 +49,12 @@ public class TeacherLogin extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
+
+
     }
 }

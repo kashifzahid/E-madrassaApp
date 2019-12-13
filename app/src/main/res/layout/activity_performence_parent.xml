@@ -223,7 +223,7 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                        android:id="@+id/text_overall"
+                        android:id="@+id/text_overall2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -233,7 +233,7 @@
                         />
 
                     <TextView
-                        android:id="@+id/today_per_overall_grade_parent"
+                        android:id="@+id/today_per_overall_grade_parent2"
                         android:layout_width="70dp"
                         android:layout_height="30dp"
                         android:text="Grade"
@@ -243,7 +243,7 @@
                         android:background="@drawable/dailydiarydesign_parent"/>
 
                     <RatingBar
-                        android:id="@+id/ruleRatingBar"
+                        android:id="@+id/ruleRatingBar2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="150dp"

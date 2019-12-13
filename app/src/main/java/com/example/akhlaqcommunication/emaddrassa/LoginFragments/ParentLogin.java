@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.akhlaqcommunication.emaddrassa.ParentConsole.ParentDashboard;
+import com.example.akhlaqcommunication.emaddrassa.ParentConsole.ParentDashboard2;
 import com.example.akhlaqcommunication.emaddrassa.R;
 import com.example.akhlaqcommunication.emaddrassa.Shared.SharedPreferenceEdit;
 import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.Dashboard;
@@ -75,7 +76,7 @@ public class ParentLogin extends Fragment {
                                     }else{
                                         SharedPreferenceEdit sharedPreferenceEdit=new SharedPreferenceEdit(getActivity());
                                         sharedPreferenceEdit.AddDriverId(status,"parent");
-                                        Intent intent=new Intent(getContext(), ParentDashboard.class);
+                                        Intent intent=new Intent(getContext(), ParentDashboard2.class);
                                         startActivity(intent);
                                     }
                                 } catch (JSONException e) {

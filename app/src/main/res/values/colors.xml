@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#000</color>
 
-    <color name="LoginTextview">#fff</color>
+    <color name="LoginTextview">#000</color>
     <color name="Textcolor">#fff</color>
     <color name="radio_btn_color">#558B2F</color>
     <color name="student_name_color">#01579B</color>
+    <color name="cardColor">#ffffff</color>
+    <color name="textcardColor">#3f3f3f</color>
 
 </resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="#FFFFFF"
+    
+    tools:context=".TeachersConsole.TeacherProfile">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/relative_logos"
+        android:visibility="visible"
+        android:layout_marginTop="70dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/logo_iiui"
+android:visibility="gone"
+            android:src="@drawable/iiui2"/>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/logo_app"
+            android:layout_centerInParent="true"
+
+            android:src="@drawable/mono1"/>
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/img"
+        android:layout_below="@id/relative_logos"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/man1"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/mo_re"
+        android:textSize="26sp"
+        android:textColor="@color/LoginTextview"
+        android:text="Qari Syed Waseem Shah"
+
+        android:id="@+id/name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="03045192218"
+        android:textSize="21sp"
+        android:textColor="@color/LoginTextview"
+        android:fontFamily="@font/mo_re"
+
+        android:id="@+id/phone" />
+        <Button
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+
+            android:layout_below="@id/phone"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+
+            android:background="@drawable/teacherdashboard_diarybutton"
+
+            android:onClick="LogOut"
+            android:textColor="#fff"
+            android:text="LOG OUT"/>
+
+    </RelativeLayout>
+
+
+
+</ScrollView>

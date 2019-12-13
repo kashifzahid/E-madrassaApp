@@ -10,8 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.akhlaqcommunication.emaddrassa.ParentConsole.ParentDashboard;
+import com.example.akhlaqcommunication.emaddrassa.ParentConsole.ParentDashboard2;
 import com.example.akhlaqcommunication.emaddrassa.Shared.SharedPreferenceEdit;
 import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.Dashboard;
+import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.TeacherDashboard;
 import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.TeacherLogin;
 
  public class Splash extends AppCompatActivity {
@@ -60,13 +62,13 @@ import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.TeacherLogin;
                                 if(status.equals("login")){
                                     String type=sharedPreferenceEdit.GetLoginType();
                                     if(type.equals("parent")){
-                                        Intent intent = new Intent(getApplicationContext(), ParentDashboard.class);
+                                        Intent intent = new Intent(getApplicationContext(), ParentDashboard2.class);
                                         startActivity(intent);
 
                                     }else if(type.equals("teacher")){
 
 
-                                    Intent intent = new Intent(getApplicationContext(), Dashboard.class);
+                                    Intent intent = new Intent(getApplicationContext(), TeacherDashboard.class);
                                     startActivity(intent);
                                     }
                                 }else{

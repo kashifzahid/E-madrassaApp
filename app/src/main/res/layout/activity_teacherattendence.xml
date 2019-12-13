@@ -100,12 +100,21 @@
         </RadioGroup>
 
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:id="@+id/relative_attendance_not_marked"
+
+        >
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/student_show"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/radio_markall"/>
+        android:layout_marginTop="50dp"
+
+        />
 
     <Button
         android:id="@+id/teacherdailydiary"
@@ -120,5 +129,162 @@
         android:onClick="SubmitAttendence"
         android:text="Submit"
         android:textColor="@color/Textcolor" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/relative_attendance_marked"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_margin="20dp"
+            android:id="@+id/relative_attendance_record"
+
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                android:layout_width="120dp"
+
+                android:layout_height="120dp"
+                app:cardCornerRadius="4dp"
+                android:layout_alignParentStart="true"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:background="#31E7CFCF"
+
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="20"
+                    android:id="@+id/total"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/mo_me"
+                    android:textSize="23sp"
+
+                    android:layout_centerHorizontal="true"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total"
+                    android:fontFamily="@font/mo_me"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_alignParentBottom="true"
+                    />
+
+            </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="120dp"
+
+                android:layout_height="120dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="3dp"
+                android:layout_centerInParent="true"
+                app:cardUseCompatPadding="true">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:background="#31E7CFCF"
+
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="20"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/mo_me"
+                        android:textSize="23sp"
+                        android:id="@+id/present"
+
+                        android:layout_centerHorizontal="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Present"
+                        android:fontFamily="@font/mo_me"
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_alignParentBottom="true"
+                        />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="120dp"
+
+                android:layout_height="120dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="3dp"
+                android:layout_alignParentEnd="true"
+                app:cardUseCompatPadding="true">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:background="#31E7CFCF"
+
+
+
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="20"
+                        android:id="@+id/absent"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/mo_me"
+                        android:textSize="23sp"
+                        android:layout_centerHorizontal="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="absent"
+                        android:fontFamily="@font/mo_me"
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_alignParentBottom="true"
+                        />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/student_show_marked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/relative_attendance_record"
+            android:layout_marginTop="50dp"
+
+            />
+
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>

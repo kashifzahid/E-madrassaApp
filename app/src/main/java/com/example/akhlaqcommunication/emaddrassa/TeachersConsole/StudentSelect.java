@@ -94,6 +94,7 @@ public class StudentSelect extends AppCompatActivity {
     }
 
     public void select_student(View view) {
+
        String id= modelClassList.get(student.getSelectedItemPosition()).getId();
         if(class_name.equals("diary")){
             Intent intent=new Intent(StudentSelect.this,DailyDiary2.class);
