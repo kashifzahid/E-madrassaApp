@@ -88,7 +88,7 @@
                 android:layout_alignBottom="@+id/student_roll_number"
                 android:layout_toEndOf="@+id/present"
                 android:buttonTint="@color/radio_btn_color"
-                android:checked="true"
+
                 android:text="Absent" />
 
             <RadioButton

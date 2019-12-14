@@ -141,7 +141,15 @@ JSONArray js=new JSONArray();
             JSONObject jsonObject1=new JSONObject();
             jsonObject1.put("student_id",l.get(i).getStudent_id());
             Log.e(TAG, l.get(i).getStudent_name()+"");
-            jsonObject1.put("status",l.get(i).getSelectedPosition());
+
+            if(l.get(i).getSelectedPosition() == 0){
+                Log.e(TAG, 0+"");
+                jsonObject1.put("status",2);
+            }else{
+                Log.e(TAG, l.get(i).getSelectedPosition()+"");
+                jsonObject1.put("status",l.get(i).getSelectedPosition());
+            }
+            //jsonObject1.put("status",l.get(i).getSelectedPosition());
             //data.put("student",jsonObject1);
             js.put(jsonObject1);
             //Log.e(TAG, data+"");

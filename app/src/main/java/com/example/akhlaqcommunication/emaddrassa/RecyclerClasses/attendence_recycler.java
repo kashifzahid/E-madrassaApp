@@ -59,6 +59,9 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
         this.modelClassList = attendenceModels;
     }
 
+
+    boolean isFirstTime = false;
+
     @Override
     public void onBindViewHolder(@NonNull final attendence_recycler.ViewHolder viewHolder, int position) {
 
@@ -69,10 +72,10 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
         viewHolder.std_semster.setText("Semester no : "+modelClass.getStudent_semster());
         viewHolder.std_class.setText("Class : "+modelClass.getStudent_class());
         viewHolder.radio_absent.setChecked(true);
-
 //        viewHolder.radio_present.setChecked( position == mSelectedItem);
 //        viewHolder.radio_absent.setChecked(position == mSelectedItem);
 //        viewHolder.radio_late.setChecked(position == mSelectedItem);
+
 
         Log.e("POSITION" + position, "1" + modelClass.isOp1Sel());
 
@@ -83,7 +86,6 @@ public class attendence_recycler extends RecyclerView.Adapter<attendence_recycle
         viewHolder.radio_present.setChecked(modelClass.isOp1Sel());
         viewHolder.radio_absent.setChecked(modelClass.isOp2Sel());
         viewHolder.radio_late.setChecked(modelClass.isOp3Sel());
-
 
     }
 
