@@ -53,7 +53,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Get updated InstanceID token.
         String refreshedToken =           FirebaseInstanceId.getInstance().getToken();
         FirebaseMessaging.getInstance().subscribeToTopic("all");
-        Log.d(TAG, "Refreshed token: " + refreshedToken);
+        Log.d("ucfnficn", "Refreshed token: " + refreshedToken);
 
         /* If you want to send messages to this application instance or manage this apps subscriptions on the server side, send the Instance ID token to your app server.*/
 
@@ -67,16 +67,21 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
+        sendNotification();
 
-        if(remoteMessage.getData()!=null)
-            getImage(remoteMessage);
+        if(remoteMessage.getData()!=null){
+           // getImage(remoteMessage);
+
+
+        }
+
     }
 
-    private void sendNotification(Bitmap bitmap){
+    private void sendNotification(){
 
 
-        NotificationCompat.BigPictureStyle style = new NotificationCompat.BigPictureStyle();
-        style.bigPicture(bitmap);
+//        NotificationCompat.BigPictureStyle style = new NotificationCompat.BigPictureStyle();
+//        style.bigPicture(bitmap);
 
         Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
@@ -101,13 +106,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle(Config.title)
+                .setContentTitle("jf")
                 .setAutoCancel(true)
                 .setSound(defaultSound)
-                .setContentText(Config.content)
+                .setContentText("jfnmefjf")
                 .setContentIntent(pendingIntent)
-                .setStyle(style)
-                .setLargeIcon(bitmap)
                 .setWhen(System.currentTimeMillis())
                 .setPriority(Notification.PRIORITY_MAX);
 
@@ -121,9 +124,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         Map<String, String> data = remoteMessage.getData();
         Config.title = data.get("title");
-        Config.content = data.get("content");
-        Config.imageUrl = data.get("imageUrl");
-        Config.gameUrl = data.get("gameUrl");
+//        Config.content = data.get("content");
+//        Config.imageUrl = data.get("imageUrl");
+//        Config.gameUrl = data.get("gameUrl");
         //Create thread to fetch image from notification
         if(remoteMessage.getData()!=null){
 

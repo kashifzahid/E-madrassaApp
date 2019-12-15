@@ -20,11 +20,17 @@ import com.example.akhlaqcommunication.emaddrassa.TeachersConsole.TeacherDashboa
 import com.example.akhlaqcommunication.emaddrassa.Volley.Urls;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyPostCallBack;
 import com.example.akhlaqcommunication.emaddrassa.Volley.VolleyRequest;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.concurrent.Executor;
+
 import static com.android.volley.VolleyLog.TAG;
+import static com.example.akhlaqcommunication.emaddrassa.Volley.Urls.login;
 
 
 public class TeacherLogin extends Fragment {
@@ -44,6 +50,7 @@ public class TeacherLogin extends Fragment {
         pass=view.findViewById(R.id.pass);
 
         signin.setOnClickListener(myClickListner);
+        getTokens("a");
         return view;
     }
     private View.OnClickListener myClickListner = new View.OnClickListener() {
@@ -63,7 +70,7 @@ public class TeacherLogin extends Fragment {
                     }
 
 
-                    VolleyRequest.PostRequest(getActivity(), Urls.login,data, new VolleyPostCallBack() {
+                    VolleyRequest.PostRequest(getActivity(), login,data, new VolleyPostCallBack() {
                         @Override
                         public void OnSuccess(JSONObject jsonObject)  {
                             try {
@@ -95,4 +102,19 @@ public class TeacherLogin extends Fragment {
             }
         }
     };
+
+    public void getTokens(String driver_id){
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(getActivity(),  new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                String newToken = instanceIdResult.getToken();
+                Log.e("newToken1", newToken);
+                // UpdateTokenToServer(driver_id,newToken);
+
+            }
+        });
+
+    }
+
 }
