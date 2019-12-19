@@ -127,7 +127,8 @@ public class TeacherDashboard extends AppCompatActivity {
     }
 
     public void openAttendence(View view) {
-        Intent openattnds = new Intent(getApplicationContext(),Teacherattendence.class);
+//        Intent openattnds = new Intent(getApplicationContext(),Teacherattendence.class);
+        Intent openattnds = new Intent(getApplicationContext(),EditData.class);
         startActivity(openattnds);
     }
     @Override

@@ -139,7 +139,8 @@ public class Dashboard extends AppCompatActivity {
     }
     public void openAttendence(View v) {
 
-        Intent openattnds = new Intent(getApplicationContext(),Teacherattendence.class);
+//        Intent openattnds = new Intent(getApplicationContext(),Teacherattendence.class);
+        Intent openattnds = new Intent(getApplicationContext(),EditData.class);
         startActivity(openattnds);
     }
     public void openClass(View v) {
