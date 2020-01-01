@@ -113,8 +113,6 @@ public class TeacherDashboard extends AppCompatActivity {
 
     }
 
-
-
     public void OpenClass(View view) {
         Intent openclass = new Intent(getApplicationContext(),TeacherClass.class);
         startActivity(openclass);
@@ -127,8 +125,8 @@ public class TeacherDashboard extends AppCompatActivity {
     }
 
     public void openAttendence(View view) {
-//        Intent openattnds = new Intent(getApplicationContext(),Teacherattendence.class);
-        Intent openattnds = new Intent(getApplicationContext(),EditData.class);
+        Intent openattnds = new Intent(getApplicationContext(),Teacherattendence.class);
+//        Intent openattnds = new Intent(getApplicationContext(),EditData.class);
         startActivity(openattnds);
     }
     @Override
