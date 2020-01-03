@@ -74,7 +74,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textColor="#fff"
         android:id="@+id/teachersignin"
         android:background="@drawable/loginbuttondesign"/>

@@ -57,7 +57,7 @@ public class DailyDiary2 extends AppCompatActivity implements AdapterView.OnItem
         //top toolbar
         mtoolbar = findViewById(R.id.teacher_dailydiary_toolbar);
         setSupportActionBar(mtoolbar);
-        getSupportActionBar().setTitle("Daily Diary");
+        getSupportActionBar().setTitle("Daily Diary 2" );
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = this;
         para = new ArrayList<>();

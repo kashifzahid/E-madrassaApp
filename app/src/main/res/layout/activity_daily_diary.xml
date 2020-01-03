@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search:"
+            android:text="@string/search"
             android:textColor="#01579B"
             android:textSize="20dp"
             android:layout_marginTop="16dp"
@@ -155,7 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="New Sabaq"
+                android:text="@string/new_sabaq"
                 android:textColor="#01579B"
                 android:textSize="20sp" />
 

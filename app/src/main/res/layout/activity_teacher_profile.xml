@@ -86,7 +86,7 @@ android:visibility="gone"
 
             android:onClick="LogOut"
             android:textColor="#fff"
-            android:text="LOG OUT"/>
+            android:text="@string/log_out"/>
 
     </RelativeLayout>
 

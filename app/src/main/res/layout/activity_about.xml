@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="match_parent"
         android:textAlignment="center"
-        android:text="About Us"
+        android:text="@string/about_us"
         android:visibility="visible"
         android:fontFamily="@font/mo_me"
         android:textStyle="bold"

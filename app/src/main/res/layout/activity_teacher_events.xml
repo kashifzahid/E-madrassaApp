@@ -54,7 +54,7 @@
                 android:id="@+id/student_semester"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="First Semester"
+                android:text="@string/first_semester"
                 android:textSize="15sp"
                 android:layout_below="@id/student_roll_number"
                 android:layout_marginLeft="105dp"/>

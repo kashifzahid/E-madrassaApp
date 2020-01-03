@@ -51,7 +51,7 @@
 
         android:layout_marginTop="32dp"
         android:fontFamily="@font/mo_re"
-        android:text="@string/app_name"
+        android:text="@string/dashboard"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:textSize="20sp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="72dp" />
 
-    <TextView
+    <Button
         android:id="@+id/user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mo_re"
-                    android:text="Personal Data"
+                    android:text="@string/personal_data"
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -170,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mo_re"
-                    android:text="Attendance"
+                    android:text="@string/attendance"
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -214,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mo_re"
-                    android:text="Daily Diary"
+                    android:text="@string/daily_diary"
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -253,7 +253,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mo_re"
-                    android:text="Class"
+                    android:text="@string/class1"
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -300,7 +300,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mo_re"
-                    android:text="About Us"
+                    android:text="@string/about_us"
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -338,7 +338,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mo_re"
-                    android:text="Library"
+                    android:text="@string/library"
                     android:textColor="@color/textcardColor"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -346,6 +346,7 @@
 
         </android.support.design.card.MaterialCardView>
         </LinearLayout>
+
 
     </LinearLayout>
 

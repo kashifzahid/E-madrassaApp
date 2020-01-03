@@ -90,6 +90,8 @@ public class Teacherattendence extends AppCompatActivity implements OnOptionSele
                         String id = jsonObject.getString("StudentId");
                         String name = jsonObject.getString("StudentName");
                         String roll = jsonObject.getString("StudentRollNo");
+                      //  String classes = jsonObject.getString("StudentClass");
+
                         String pic = jsonObject.getString("StudentPic");
                         String semester_no=jsonObject.getString("semester_no");
                         modelClassList.add(new attendence_modelclass(id, R.drawable.profileicon,name,roll,
@@ -165,7 +167,7 @@ JSONArray js=new JSONArray();
 VolleyRequest.PostRequest(Teacherattendence.this, Urls.PostAttendance, data, new VolleyPostCallBack() {
     @Override
     public void OnSuccess(JSONObject jsonObject) {
-        Intent intent=new Intent(Teacherattendence.this,Dashboard.class);
+        Intent intent=new Intent(Teacherattendence.this,TeacherDashboard.class);
         startActivity(intent);
     }
 

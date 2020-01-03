@@ -31,7 +31,10 @@
         <activity android:name=".TeachersConsole.TeacherProfile" />
         <activity android:name=".About" />
         <activity android:name=".ParentConsole.ParentDashboard2" />
-        <activity android:name=".TeachersConsole.TeacherDashboard" />
+        <activity android:name=".TeachersConsole.TeacherDashboard"
+            android:configChanges="locale">
+
+        </activity>
         <activity android:name=".ParentConsole.ParentDailyDiaryItems" />
         <activity android:name=".TeachersConsole.DailyDiary2" />
         <activity android:name=".TeachersConsole.StudentSelect" />
@@ -75,9 +78,10 @@
         <activity
             android:name=".TeachersConsole.DailyDiary"
             android:parentActivityName=".TeachersConsole.Dashboard" />
-        <activity android:name=".TeachersConsole.Dashboard" />
+        <activity android:name="$TeachersConsole.Dashboard" />
         <activity android:name=".TeachersConsole.TeacherLogin" />
-        <activity android:name=".Splash">
+        <activity android:name=".Splash"
+            android:configChanges="locale">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
